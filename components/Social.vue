@@ -16,12 +16,12 @@
 </template>
 
 <style lang="scss" scoped>
-.social{
+.social {
 	background: #000;
 	background: url(~assets/images/graphics/social.jpg) no-repeat center / cover #000;
 	position: relative;
 
-	&::before{
+	&::before {
 		content: '';
 		display: block;
 		position: absolute;
@@ -31,7 +31,7 @@
 		top: 0;
 	}
 
-	&__link{
+	&__link {
 		padding: 15px 35px;
 		color: #fff !important;
 		font-family: $font-bold;
@@ -41,13 +41,13 @@
 		font-size: 20px;
 		letter-spacing: 3px;
 
-		i{
+		i {
 			font-size: 28px;
 			vertical-align: middle;
 			margin-right: 10px;
 		}
 
-		&:hover{
+		&:hover {
 			background: $gold-color;
 		}
 	}
