@@ -54,7 +54,8 @@ export default {
   */
   plugins: [
     { src: '~/plugins/googleAnalytics.js', mode: 'client' },
-    { src: '~/plugins/vue-scroll-reveal', ssr: false }
+    { src: '~/plugins/vue-scroll-reveal', ssr: false },
+    { src: '~/plugins/swipped', ssr: false }
   ],
   /*
   ** Auto import components

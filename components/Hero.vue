@@ -79,13 +79,20 @@ export default {
     changeSlide (slide) {
       this.heroSlideDirection = slide < this.heroCurrentSlide ? 'slide-left' : 'slide-right';
       this.heroCurrentSlide = slide === this.slideshow.length ? 0 : slide === -1 ? this.slideshow.length - 1 : slide;
-      console.log(slide, this.slideshow.length - 1, this.heroCurrentSlide)
       this.initHeroSlider();
     }
   },
 
   mounted () {
-    this.initHeroSlider();
+		this.initHeroSlider();
+		
+		document.querySelector('.hero').addEventListener('swiped-right', () => {
+			this.changeSlide(this.heroCurrentSlide - 1);
+		});
+
+		document.querySelector('.hero').addEventListener('swiped-left', () => {
+			this.changeSlide(this.heroCurrentSlide + 1);
+		});
   }
 }
 </script>
