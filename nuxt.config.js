@@ -33,7 +33,6 @@ export default {
       { name: 'twitter:image', content: 'https://inkdependent.eu/images/slideshow/slide-1.jpg' },
       { name: 'google-site-verification', content: 'SmYckbKgvHa-5sRWHHLZaLTVJhPAc3fCofM6N0KWGu0' },
       { name: 'theme-color', content: '#000000' }
-
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
