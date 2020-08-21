@@ -6,8 +6,8 @@
           <a href="/"><img src="@/assets/images/logo-small.png" alt="Logo" /></a>
 
           <nav class="main-nav u-text-right">
-            <button class="main-nav__toggler" @click="toggleMenu"><i class="fas fa-bars"></i></button>
-            <ul @click="toggleMenu" :class="{'mobile-on': menuStatus}">
+            <button class="main-nav__toggler" @click="menuStatus = !menuStatus"><fa :icon="['fas', 'bars']"/></button>
+            <ul @click="menuStatus = !menuStatus" :class="{'mobile-on': menuStatus}">
               <li class="main-nav__link"><a href="/#hero" :class="{'active': currentSection == 'hero'}">Home</a></li>
               <li class="main-nav__link"><a href="/#about" :class="{'active': currentSection == 'about'}">About</a></li>
               <li class="main-nav__link"><a href="/#artists" :class="{'active': currentSection == 'artists'}">Artists</a></li>
@@ -44,12 +44,6 @@ export default {
       });
 
       return findSection
-    }
-  },
-
-  metohds: {
-    toggleMenu () {
-      this.menuStatus = !this.menuStatus
     }
   }
 }
