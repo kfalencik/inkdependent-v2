@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row">
         <div class="col u-text-center">
-          <h2 class="h2">About us</h2>
-          <p class="u-cinzel">Inkdependent tattoo studio has been established in 2009, but our ink-adventure had started about 10 years ago. We love getting tattoos as much as we love to design them and we take it earnestly and committedly because we aware that our artwork will remain with our customers until the end.</p>
+          <h2 class="h2" v-scroll-reveal="{ cleanup: true, delay: 500, duration: 1000, distance: '250px', origin: 'top', interval: 300 }">About us</h2>
+          <p class="u-cinzel" v-scroll-reveal="{ cleanup: true, delay: 1000, duration: 1000, distance: '250px', origin: 'bottom', interval: 300 }">Inkdependent tattoo studio has been established in 2009, but our ink-adventure had started about 10 years ago. We love getting tattoos as much as we love to design them and we take it earnestly and committedly because we aware that our artwork will remain with our customers until the end.</p>
         </div>
       </div>
     </div>

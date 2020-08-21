@@ -53,6 +53,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '~/plugins/googleAnalytics.js', mode: 'client' },
+    { src: '~/plugins/vue-scroll-reveal', ssr: false }
   ],
   /*
   ** Auto import components
