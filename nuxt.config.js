@@ -38,7 +38,6 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'apple-touch-icon', href: 'icon.png' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin: 'anonymous' },
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' },
       { rel: 'manifest', href: '/manifest.json' }
 
@@ -72,12 +71,29 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['nuxt-fontawesome', {
+      component: 'fa', 
+      imports: [
+        //import whole set
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['fas']
+        },
+        {
+          set: '@fortawesome/free-brands-svg-icons',
+          icons: ['fab']
+        }
+      ]
+    }]
   ],
   styleResources: {
     scss: [
       './assets/styles/*.scss',
     ]
+  },
+  fontawesome: {
+    component: 'fa'
   },
   /*
   ** Axios module configuration
