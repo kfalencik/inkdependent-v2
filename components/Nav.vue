@@ -26,13 +26,13 @@ export default {
   data () {
     return {
       menuStatus: false,
-      currentSection: 'hero'
+      currentSection: 'hero',
     }
   },
 
-  computed: {
-    currentMenuLink: function() {
-      const sections = document.querySelectorAll('section');
+	methods: {
+		getCurrentMenuItem () {
+			const sections = document.querySelectorAll('section');
       let currentScroll = window.pageYOffset;
       let findSection = null
 
@@ -41,11 +41,17 @@ export default {
         if (currentScroll + 100 > sectionPosition) {
           findSection = section.getAttribute('id');
         }
-      });
-
-      return findSection
-    }
-  }
+			});
+			
+      this.currentSection = findSection
+		}
+	},
+	
+	mounted () {
+		window.addEventListener('scroll', () => {
+			this.getCurrentMenuItem()
+		});
+	}
 }
 </script>
 
