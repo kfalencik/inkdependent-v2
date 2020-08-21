@@ -15,20 +15,40 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Inkdependent - Tattoo & Piercing, Edinburgh',
     meta: [
       { charset: 'utf-8' },
+      { httpEquiv: 'x-ua-compatible', content: 'ie-edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { name: 'description', content: 'Inkdependent is a tattoo & piercing studio based in Edinburgh, Scotland.' },
+      { property: 'og:title', content: 'Inkdependent - Tattoo & Piercing, Edinburgh' },
+      { property: 'og:type', content: 'webiste' },
+      { property: 'og:url', content: 'https://inkdependent.eu' },
+      { property: 'og:image', content: 'https://inkdependent.eu/images/logo.png' },
+      { property: 'og:description', content: 'Inkdependent is a tattoo & piercing studio based in Edinburgh, Scotland.' },
+      { property: 'fb:app_id', content: '1700806313540957' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+		  { name: 'twitter:title', content: 'Inkdependent - Tattoo & Piercing, Edinburgh' },
+		  { name: 'twitter:description', content: 'Inkdependent is a tattoo & piercing studio based in Edinburgh, Scotland.' },
+      { name: 'twitter:image', content: 'https://inkdependent.eu/images/slideshow/slide-1.jpg' },
+      { name: 'google-site-verification', content: 'SmYckbKgvHa-5sRWHHLZaLTVJhPAc3fCofM6N0KWGu0' },
+      { name: 'theme-color', content: '#000000' }
+
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', href: 'icon.png' },
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin: 'anonymous' },
+      { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' },
+      { rel: 'manifest', href: '/manifest.json' }
+
     ]
   },
   /*
   ** Global CSS
   */
   css: [
+    '~/assets/styles/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -52,7 +72,13 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: [
+      './assets/styles/*.scss',
+    ]
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
