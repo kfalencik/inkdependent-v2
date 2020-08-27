@@ -75,11 +75,17 @@ export default {
       event.preventDefault();
 
       if (this.contactEmail !== '' && this.contactSubject !== '' && this.contactMessage !== '' && this.contactName != '') {
-        let myform = document.querySelector('#contact-form');
         let service_id = "default_service";
         let template_id = "template_0FUSa2lo";
+
+        const message =  {
+          email: this.contactEmail,
+          name: this.contactName,
+          subject: this.contactSubject,
+          message: this.contactMessage
+        };
         
-        emailjs.send(service_id, template_id, myform, 'user_zMe7fkxzmtQpKn9E5lzTw').then(response => {
+        emailjs.send(service_id, template_id, message).then(response => {
           this.contactMessage = '';
           this.contactName = '';
           this.contactEmail = '';
