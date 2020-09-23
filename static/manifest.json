@@ -14,12 +14,12 @@
     "prefer_related_applications": false,
     "icons": [
 		{
-			"src": "images/logo.png",
+			"src": "logo.png",
 			"type": "image/png",
 			"sizes": "315x315"
 		},
 		{
-			"src": "images/app-icon.png",
+			"src": "app-icon.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		}

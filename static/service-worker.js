@@ -4,8 +4,8 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.html',
-				'./images/logo.png',
-				'./images/logo-small.png',
+				'./logo.png',
+				'./logo-small.png',
 				'./images/marker.png',
 				'./styles/main.min.css',
 				'./scripts/main.min.js',

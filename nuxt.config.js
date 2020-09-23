@@ -24,7 +24,7 @@ export default {
       { property: 'og:title', content: 'Inkdependent - Tattoo & Piercing, Edinburgh' },
       { property: 'og:type', content: 'webiste' },
       { property: 'og:url', content: 'https://inkdependent.eu' },
-      { property: 'og:image', content: 'https://inkdependent.eu/images/logo.png' },
+      { property: 'og:image', content: 'https://inkdependent.eu/icon.png' },
       { property: 'og:description', content: 'Inkdependent is a tattoo & piercing studio based in Edinburgh, Scotland.' },
       { property: 'fb:app_id', content: '1004744209952529' },
       { name: 'twitter:card', content: 'summary_large_image' },
