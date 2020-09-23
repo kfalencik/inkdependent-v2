@@ -9,12 +9,10 @@ export const actions = {
     Facebook.load()
       .then(() => {
         Facebook.init({
-          appId: '1700806313540957',
+          appId: '1004744209952529',
 					xfbml: true,
 					version: 'v3.2'
         });
-
-        console.log('lelel facebook')
 
         const tattooAlbums = []
 
