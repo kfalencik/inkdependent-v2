@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col u-text-center">
-          <h2 class="h2 u-white" v-scroll-reveal="{ cleanup: true, delay: 500, duration: 1000, distance: '250px', origin: 'top', interval: 300 }">Artists</h2>
+          <h2 class="h2 u-white" v-scroll-reveal="{ cleanup: false, delay: 500, duration: 1000, distance: '250px', origin: 'top', interval: 300 }">Artists</h2>
         </div>
       </div>
 
@@ -29,8 +29,8 @@
 
             <div @click="closeTattooAlbum" v-if="tattooOverlay === true && activeTattooAlbum === index" class="tattoo__overlay">
               <button class="tattoo__overlay-nav tattoo__overlay-nav--close" @click.stop="closeTattooAlbum"><i class="fas fa-times"></i></button>
-              <button class="tattoo__overlay-nav tattoo__overlay-nav--prev" v-if="activeTattooPicture - 1 >= 0" @click.stop="changeTattooPicture(activeTattooPicture - 1)"><i class="fas fa-chevron-left"></i></button>
-              <button class="tattoo__overlay-nav tattoo__overlay-nav--next" v-if="activeTattooPicture + 1 < item.photos.data.length" @click.stop="changeTattooPicture(activeTattooPicture + 1)"><i class="fas fa-chevron-right"></i></button>
+              <button class="tattoo__overlay-nav tattoo__overlay-nav--prev" v-if="activeTattooPicture - 1 >= 0" @click.stop="changeTattooPicture(activeTattooPicture - 1)"><fa :icon="['fas', 'chevron-left']"/></button>
+              <button class="tattoo__overlay-nav tattoo__overlay-nav--next" v-if="activeTattooPicture + 1 < item.photos.data.length" @click.stop="changeTattooPicture(activeTattooPicture + 1)"><fa :icon="['fas', 'chevron-right']"/></button>
 
               <template v-for="(picture, i) in item.photos.data">
                 <div v-if="activeTattooPicture === i" :key="`tattoo-album-${index}-picture-${i}`" class="tattoo__overlay-item u-text-center">
