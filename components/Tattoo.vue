@@ -17,7 +17,7 @@
 
       <transition-group class="row" name="fade">
         <template v-for="(item, index) in tattooAlbums">
-          <div itemscope v-if="tattooAlbums.length > 0 && staggerTattooAlbums > index" :key="`tattoo-album-${index}`" class="tattoo__item u-text-center col-md-4 col-lg-3">
+          <div itemscope v-if="tattooAlbums.length > 0" :key="`tattoo-album-${index}`" class="tattoo__item u-text-center col-md-4 col-lg-3">
             <div class="tattoo__item-image" @click="openTattooAlbum(index)">
               <img :src="item.cover_photo.source" :alt="item.name" />
             </div>
@@ -55,8 +55,7 @@ export default {
     return {
       activeTattooAlbum: null,
       tattooOverlay: false,
-      activeTattooPicture: 0,
-      staggerTattooAlbums: 0,
+      activeTattooPicture: 0
     }
   },
 
@@ -90,3 +89,125 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.tattoo{
+
+	&__item{
+		margin: 20px 0;
+	}
+
+	&__item-image{
+		overflow: hidden;
+
+		img{
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+			object-position: top;
+			cursor: pointer;
+			transition: all .5s ease;
+
+			@media(min-width: $breakpoint-md){
+				height: 200px;
+			}
+
+			&:hover{
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	&__item-title{
+		margin-top: 15px;
+
+		.h3{
+			font-family: $font-bold;
+			letter-spacing: 2px;
+			font-size: 20px;
+		}
+
+		a{
+			color: #fff;
+			font-size: 16px;
+		}
+
+	}
+
+	&__overlay{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 999;
+		display: flex;
+		text-align: center;
+		align-items: center;
+
+		&::before{
+			content: '';
+			display: block;
+			background: rgba(0,0,0,0.75);
+			width: 100%;
+			height: 100%;
+			position: absolute;
+		}
+	}
+
+	&__overlay-nav{
+		z-index: 1000;
+		background: none;
+		font-size: 35px;
+		color: #fff;
+		border: none;
+		position: absolute;
+		left: 5px;
+		cursor: pointer;
+		text-shadow: 0 0 5px rgba(0,0,0,0.75);
+
+		@media(min-width: $breakpoint-lg){
+			left: 50px;
+			font-size: 50px;
+		}
+
+		&--next{
+			left: auto;
+			right: 5px;
+
+			@media(min-width: $breakpoint-lg){
+				right: 50px;
+			}
+		}
+
+		&--close{
+			top: 50px;
+			left: auto;
+			right: 5px;
+			font-size: 30px;
+
+			@media(min-width: $breakpoint-lg){
+				right: 50px;
+			}
+		}
+	}
+
+	&__overlay-item{
+		position: relative;
+		z-index: 999;
+		width: 100%;
+	}
+
+	&__overlay-item-image{
+
+		img{
+			max-width: 100%;
+			object-fit: cover;
+			height: auto;
+			object-position: center;
+			cursor: pointer;
+		}
+	}
+}
+
+</style>
