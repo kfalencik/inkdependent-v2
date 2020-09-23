@@ -16,9 +16,7 @@ export const actions = {
 
         const tattooAlbums = []
 
-        console.log(FB)
-
-        FB.api('/inkdependenttattoos?fields=albums.limit(250){name,count,cover_photo{source},photos{source}}&access_token=EAAe39aH7hokBAIZAaXIjr6yIvAZBZBvnZBi6vJvrRjsyh3knyfKH1E7zkmnYrWB45G3OaqK5MbqRHngfTKu25JKChaJP8uEwDXAC6SO7CjS6PZB9yRPh95lGqvXQy1ZCRsW5Aks7qF7l1WDaciQn8ZAXjZCvsdCumdWM6koVtKYMHgZDZD', (response) => {
+        FB.api('/inkdependenttattoos?fields=albums.limit(250){name,count,cover_photo{source},photos{source}}&access_token=EAAORzz25bxEBAHkcDucVpA06gvIZCjQlLSMPtL3Fav5ZBo0vuYDF4L33PBU6F51FTGroKZBroW3s5ChuxxsZCuZBld3ocgglTw0zZB5R7pwyaIPbNgdew4jIintIk32iLUsR4oTuFEtqIR8aBpv3rx4lArcxG9M0PMZB4ZCHwZA954QZDZD', (response) => {
 						let albums = response.albums.data;
 						albums.forEach(function(album) {
               if (album.id === '10161284757175582') {
