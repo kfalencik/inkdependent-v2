@@ -48,8 +48,8 @@ export const actions = {
 								getAllPhotos();
 							}
 
-							if (album.id === '10160033361505582') {
-								// Marek 2018
+							if (album.id === '10162197690600582') {
+								// Marek
 								album.name = 'Marek';
 								album.instagram = 'https://www.instagram.com/marekskalny_art';
 								album.order = 1;
@@ -73,27 +73,6 @@ export const actions = {
 								// Marek Oil Paintings
 								album.name = 'Marek Paintings';
 								album.instagram = 'https://www.instagram.com/marekskalny_art';
-								album.order = 2;
-								commit('ADD_ALBUM', album);
-
-								const getAllPhotos = async function(){
-									let nextPage = album.photos.paging.next;
-
-									while(album.photos.data.length < album.count){
-										const response = await fetch(nextPage);
-										const json = await response.json();
-										album.photos.data = album.photos.data.concat(json.data);
-										nextPage = json.paging.next;
-									}
-								}
-
-								getAllPhotos();
-							}
-
-							if (album.id === '10153556071625582') {
-								// Daniel
-
-								album.instagram = 'https://www.instagram.com/danielbacz';
 								album.order = 2;
 								commit('ADD_ALBUM', album);
 
@@ -153,50 +132,6 @@ export const actions = {
 								getAllPhotos();
 							}
 
-							if (album.id === '10160843000760582') {
-								// Karol
-
-								album.name = 'Karol';
-								album.instagram = 'https://www.instagram.com/charlie__lame';
-								album.order = 5;
-								commit('ADD_ALBUM', album);
-
-								const getAllPhotos = async function(){
-									let nextPage = album.photos.paging.next;
-
-									while(album.photos.data.length < album.count){
-										const response = await fetch(nextPage);
-										const json = await response.json();
-										album.photos.data = album.photos.data.concat(json.data);
-										nextPage = json.paging.next;
-									}
-								}
-
-								getAllPhotos();
-							}
-
-							if (album.id === '10158809026710582') {
-								// Aga
-
-								album.name = 'Aga';
-								album.instagram = 'https://www.instagram.com/pelikan.baba/';
-								album.order = 5;
-								commit('ADD_ALBUM', album);
-
-								const getAllPhotos = async function(){
-									let nextPage = album.photos.paging.next;
-
-									while(album.photos.data.length < album.count){
-										const response = await fetch(nextPage);
-										const json = await response.json();
-										album.photos.data = album.photos.data.concat(json.data);
-										nextPage = json.paging.next;
-									}
-								}
-
-								getAllPhotos();
-							}
-
 							if (album.id === '10160543615490582') {
 								// Sofia
 
@@ -224,6 +159,50 @@ export const actions = {
 
 								album.name = 'Ash';
 								album.instagram = 'https://www.instagram.com/achristieart';
+								album.order = 7;
+								commit('ADD_ALBUM', album);
+
+								const getAllPhotos = async function(){
+									let nextPage = album.photos.paging.next;
+
+									while(album.photos.data.length < album.count){
+										const response = await fetch(nextPage);
+										const json = await response.json();
+										album.photos.data = album.photos.data.concat(json.data);
+										nextPage = json.paging.next;
+									}
+								}
+
+								getAllPhotos();
+							}
+							
+							if (album.id === '10165533036760582') {
+								// Ratpig
+
+								album.name = 'Ratpig a.k.a. Rux (apprentice)';
+								album.instagram = 'https://www.instagram.com/ratpig_ink';
+								album.order = 7;
+								commit('ADD_ALBUM', album);
+
+								const getAllPhotos = async function(){
+									let nextPage = album.photos.paging.next;
+
+									while(album.photos.data.length < album.count){
+										const response = await fetch(nextPage);
+										const json = await response.json();
+										album.photos.data = album.photos.data.concat(json.data);
+										nextPage = json.paging.next;
+									}
+								}
+
+								getAllPhotos();
+							}
+
+							if (album.id === '10165545702370582') {
+								// Freya
+
+								album.name = 'Freya (apprentice)';
+								album.instagram = 'https://www.instagram.com/freya.duckett.art';
 								album.order = 7;
 								commit('ADD_ALBUM', album);
 

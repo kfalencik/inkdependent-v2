@@ -8,7 +8,7 @@
       </div>
 
       <transition name="fade">
-        <div v-if="tattooAlbums.length === 0" class="row">
+        <div v-if="albums.length === 0" class="row">
           <div class="col u-text-center">
             <img src="@/assets/images/loading.svg" alt="Loading" />
           </div>
@@ -16,15 +16,15 @@
       </transition>
 
       <transition-group class="row" name="fade">
-        <template v-for="(item, index) in tattooAlbums">
-          <div itemscope v-if="tattooAlbums.length > 0" :key="`tattoo-album-${index}`" class="tattoo__item u-text-center col-md-4 col-lg-3">
+        <template v-for="(item, index) in albums">
+          <div itemscope v-if="albums.length > 0" :key="`tattoo-album-${index}`" class="tattoo__item u-text-center col-md-4 col-lg-3">
             <div class="tattoo__item-image" @click="openTattooAlbum(index)">
               <img :src="item.cover_photo.source" :alt="item.name" />
             </div>
 
             <div class="tattoo__item-title">
               <h3 itemprop="name" class="h3 u-white">{{ item.name }}</h3>
-              <p><a rel="noopener" :href="item.instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a></p>
+              <p><a rel="noopener" :href="item.instagram" target="_blank" title="Instagram"><fa :icon="['fab', 'instagram']" /> Instagram</a></p>
             </div>
 
             <div @click="closeTattooAlbum" v-if="tattooOverlay === true && activeTattooAlbum === index" class="tattoo__overlay">
@@ -62,11 +62,20 @@ export default {
   computed: {
     ...mapGetters([
       'tattooAlbums'
-    ])
+    ]),
+
+	albums () {
+		return this.tattooAlbums && this.tattooAlbums.length ? [...this.tattooAlbums].map((item) => {
+			item.photos.data = item.photos.data.reverse()
+			return item
+		}).sort((a, b) => a.order - b.order): []
+	}
   },
 
   mounted () {
-    this.LOAD_ALBUMS()
+    this.LOAD_ALBUMS().then(() => {
+		console.log('loaded', this.tattooAlbums)
+	})
   },
 
   methods: {
@@ -140,7 +149,7 @@ export default {
 		left: 0;
 		width: 100%;
 		height: 100vh;
-		z-index: 999;
+		z-index: 9999;
 		display: flex;
 		text-align: center;
 		align-items: center;
@@ -199,11 +208,10 @@ export default {
 	}
 
 	&__overlay-item-image{
-
 		img{
-			max-width: 100%;
+			max-width: 96vw;
+			max-height: 96vh;
 			object-fit: cover;
-			height: auto;
 			object-position: center;
 			cursor: pointer;
 		}
