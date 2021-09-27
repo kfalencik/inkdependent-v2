@@ -62,6 +62,9 @@ export default {
   ** See https://nuxtjs.org/api/configuration-components
   */
   components: true,
+  env: {
+    GRAPHAPI: process.env.GRAPHAPI || ''
+  },
   /*
   ** Nuxt.js dev-modules
   */

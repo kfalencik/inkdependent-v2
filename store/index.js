@@ -25,7 +25,6 @@ export const actions = {
         });
 
         FB.api('/inkdependenttattoos?fields=albums.limit(250){name,count,cover_photo{source},photos{source}}&access_token=' + process.env.GRAPHAPI || '', (response) => {
-			console.log(response)	
 			let albums = response.albums.data;
 			albums.forEach(function(album) {
               if (album.id === '10161284757175582') {
