@@ -73,9 +73,7 @@ export default {
   },
 
   mounted () {
-    this.LOAD_ALBUMS().then(() => {
-		console.log('loaded', this.tattooAlbums)
-	})
+    this.LOAD_ALBUMS()
   },
 
   methods: {

@@ -24,9 +24,10 @@ export const actions = {
 					version: 'v3.2'
         });
 
-        FB.api('/inkdependenttattoos?fields=albums.limit(250){name,count,cover_photo{source},photos{source}}&access_token=EAAORzz25bxEBAHkcDucVpA06gvIZCjQlLSMPtL3Fav5ZBo0vuYDF4L33PBU6F51FTGroKZBroW3s5ChuxxsZCuZBld3ocgglTw0zZB5R7pwyaIPbNgdew4jIintIk32iLUsR4oTuFEtqIR8aBpv3rx4lArcxG9M0PMZB4ZCHwZA954QZDZD', (response) => {
-						let albums = response.albums.data;
-						albums.forEach(function(album) {
+        FB.api('/inkdependenttattoos?fields=albums.limit(250){name,count,cover_photo{source},photos{source}}&access_token=' + process.env.GRAPHAPI || '', (response) => {
+			console.log(response)	
+			let albums = response.albums.data;
+			albums.forEach(function(album) {
               if (album.id === '10161284757175582') {
 								// Marcin 2019
 								album.name = 'Marcin';
