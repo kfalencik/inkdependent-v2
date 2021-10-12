@@ -19,7 +19,7 @@ export const actions = {
     Facebook.load()
       .then(() => {
         Facebook.init({
-          appId: '1004744209952529',
+          appId: '1700806313540957',
 					xfbml: true,
 					version: 'v3.2'
         });
